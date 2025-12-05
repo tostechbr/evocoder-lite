@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { MemoryService } from './memory.service';
 
 @Module({
-  imports: [],
+  imports: [ConfigModule],
   controllers: [],
-  providers: [],
-  exports: [],
+  providers: [MemoryService],
+  exports: [MemoryService],
 })
 export class MemoryModule {}
 

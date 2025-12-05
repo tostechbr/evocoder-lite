@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
+import { AgentService } from './agent.service';
+import { MemoryModule } from '../memory/memory.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [MemoryModule, ConfigModule],
   controllers: [],
-  providers: [],
-  exports: [],
+  providers: [AgentService],
+  exports: [AgentService],
 })
 export class AgentModule {}
 
